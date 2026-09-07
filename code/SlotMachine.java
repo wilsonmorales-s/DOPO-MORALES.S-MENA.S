@@ -285,7 +285,7 @@ public class SlotMachine{
         Wheel w1 = wheels.get(at1 - 1);
         Wheel w2 = wheels.get(at2 - 1);
         if(w1.isLocked() || w2.isLocked()){
-            fail("No se puede intercambiar una rueda fija (locked).");
+            fail("No se puede intercambiar una rueda fija.");
             return;
         }
         int pos1 = w1.getPosition();
@@ -381,10 +381,12 @@ public class SlotMachine{
     public void makeVisible(){
         visible = true;
         background.makeVisible();
+        refreshJackpotLook();
+
         for(Wheel wheel : wheels){
             wheel.show();
         }
-        refreshJackpotLook();
+
         succeed();
     }
 
