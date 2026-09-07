@@ -1,11 +1,7 @@
 /**
- * Representa una rueda individual de la maquina tragamonedas.
- * <p>
- * Una rueda envuelve un {@link Circle} que es la forma que realmente
- * se dibuja en el {@link Canvas}. Wheel no conoce nada de colores CSS
- * ni de la paleta de simbolos de la maquina: solo guarda un indice de
- * posicion (1-based, 0 significa "vacia, sin simbolo asignado") y,
- * opcionalmente, si esta fija (locked) para que la maquina no la gire.
+ * Representa una rueda de la maquina.
+ * La rueda usa un Circle para mostrarse y guarda la posicion del
+ * simbolo que tiene. Tambien puede quedar bloqueada para que no gire.
  *
  * @author Samuel Mena Serrato
  */

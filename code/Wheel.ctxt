@@ -1,0 +1,31 @@
+#BlueJ class context
+comment0.target=Wheel
+comment0.text=\r\n\ Representa\ una\ rueda\ de\ la\ maquina.\r\n\ La\ rueda\ usa\ un\ Circle\ para\ mostrarse\ y\ guarda\ la\ posicion\ del\r\n\ simbolo\ que\ tiene.\ Tambien\ puede\ quedar\ bloqueada\ para\ que\ no\ gire.\r\n\r\n\ @author\ Samuel\ Mena\ Serrato\r\n
+comment1.params=x\ y
+comment1.target=Wheel(int,\ int)
+comment1.text=\r\n\ Crea\ una\ rueda\ nueva,\ vacia\ (sin\ simbolo)\ y\ sin\ fijar,\ ubicada\r\n\ en\ las\ coordenadas\ dadas.\r\n\r\n\ @param\ x\ coordenada\ horizontal\ del\ centro\ de\ la\ rueda\r\n\ @param\ y\ coordenada\ vertical\ del\ centro\ de\ la\ rueda\r\n
+comment2.params=newPosition\ color
+comment2.target=void\ setPosition(int,\ java.lang.String)
+comment2.text=\r\n\ Cambia\ el\ simbolo\ mostrado\ por\ esta\ rueda.\r\n\r\n\ @param\ newPosition\ indice\ 1-based\ del\ simbolo\ dentro\ de\ la\ paleta\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ de\ la\ maquina\ (0\ \=\ vacia)\r\n\ @param\ color\ \ \ \ \ \ \ \ color\ CSS\ a\ pintar\ en\ la\ rueda,\ o\ {@code\ null}\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ si\ no\ se\ debe\ repintar\ (por\ ejemplo\ al\ vaciarla)\r\n
+comment3.params=
+comment3.target=int\ getPosition()
+comment3.text=\r\n\ Consulta\ la\ posicion\ (indice\ 1-based\ en\ la\ paleta)\ que\ tiene\r\n\ actualmente\ esta\ rueda.\r\n\r\n\ @return\ la\ posicion\ actual,\ o\ 0\ si\ la\ rueda\ esta\ vacia\r\n
+comment4.params=
+comment4.target=void\ lock()
+comment4.text=Fija\ la\ rueda\:\ mientras\ este\ locked,\ la\ maquina\ no\ debe\ girarla.
+comment5.params=
+comment5.target=void\ unlock()
+comment5.text=Suelta\ la\ rueda\ para\ que\ vuelva\ a\ poder\ girar.
+comment6.params=
+comment6.target=boolean\ isLocked()
+comment6.text=\r\n\ Indica\ si\ la\ rueda\ esta\ actualmente\ fija.\r\n\r\n\ @return\ {@code\ true}\ si\ esta\ fija\ (locked),\ {@code\ false}\ si\ no\r\n
+comment7.params=newX\ newY
+comment7.target=void\ relayout(int,\ int)
+comment7.text=\r\n\ Reubica\ la\ rueda\ cuando\ cambia\ la\ distribucion\ de\ la\ maquina\r\n\ (por\ ejemplo\ al\ agregar\ o\ quitar\ otra\ rueda).\r\n\r\n\ @param\ newX\ nueva\ coordenada\ horizontal\ del\ centro\r\n\ @param\ newY\ nueva\ coordenada\ vertical\ del\ centro\r\n
+comment8.params=
+comment8.target=void\ show()
+comment8.text=Hace\ visible\ la\ rueda\ en\ el\ canvas.
+comment9.params=
+comment9.target=void\ hide()
+comment9.text=Oculta\ la\ rueda\ del\ canvas.
+numComments=10

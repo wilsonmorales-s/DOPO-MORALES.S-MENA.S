@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=CssColors
+comment1.params=
+comment1.target=CssColors()
+comment2.params=name
+comment2.target=boolean\ isValid(java.lang.String)
+comment2.text=Revisa\ si\ el\ color\ esta\ dentro\ de\ los\ colores\ permitidos.
+comment3.params=name
+comment3.target=java.awt.Color\ toAwtColor(java.lang.String)
+comment3.text=Convierte\ el\ nombre\ del\ color\ al\ formato\ Color\ de\ Java.
+comment4.params=
+comment4.target=java.util.Map\ buildTable()
+numComments=5

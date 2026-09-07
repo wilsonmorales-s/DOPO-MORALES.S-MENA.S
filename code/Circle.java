@@ -2,10 +2,8 @@ import java.awt.*;
 import java.awt.geom.*;
 
 /**
- * A circle that can be manipulated and that draws itself on a canvas.
- * 
- * @author  Michael Kolling and David J. Barnes
- * @version 1.0.  (15 July 2000) 
+ * Clase que representa un circulo y permite moverlo y cambiarlo.
+ * Se usa el Canvas para mostrarlo en pantalla.
  */
 
 public class Circle{
@@ -58,35 +56,35 @@ public class Circle{
     }
     
     /**
-     * Move the circle a few pixels to the right.
+     * Mueve el circulo hacia la derecha.
      */
     public void moveRight(){
         moveHorizontal(20);
     }
 
     /**
-     * Move the circle a few pixels to the left.
+     * Mueve el circulo hacia la izquierda.
      */
     public void moveLeft(){
         moveHorizontal(-20);
     }
 
     /**
-     * Move the circle a few pixels up.
+     * Mueve el circulo hacia arriba.
      */
     public void moveUp(){
         moveVertical(-20);
     }
 
     /**
-     * Move the circle a few pixels down.
+     * Mueve el circulo hacia abajo.
      */
     public void moveDown(){
         moveVertical(20);
     }
 
     /**
-     * Move the circle horizontally.
+     * Mueve el circulo horizontalmente.
      * @param distance the desired distance in pixels
      */
     public void moveHorizontal(int distance){
@@ -96,7 +94,7 @@ public class Circle{
     }
 
     /**
-     * Move the circle vertically.
+     * Mueve el circulo verticalmente.
      * @param distance the desired distance in pixels
      */
     public void moveVertical(int distance){
@@ -106,7 +104,7 @@ public class Circle{
     }
 
     /**
-     * Slowly move the circle horizontally.
+     * Mueve el circulo poco a poco horizontalmente.
      * @param distance the desired distance in pixels
      */
     public void slowMoveHorizontal(int distance){
@@ -126,7 +124,7 @@ public class Circle{
     }
 
     /**
-     * Slowly move the circle vertically
+     * Mueve el circulo poco a poco verticalmente.
      * @param distance the desired distance in pixels
      */
     public void slowMoveVertical(int distance){
@@ -146,7 +144,7 @@ public class Circle{
     }
 
     /**
-     * Change the size.
+     * Cambia el tamaño del circulo.
      * @param newDiameter the new size (in pixels). Size must be >=0.
      */
     public void changeSize(int newDiameter){
@@ -156,7 +154,7 @@ public class Circle{
     }
 
     /**
-     * Change the color. 
+     * Cambia el color.
      * @param color the new color. Valid colors are "red", "yellow", "blue", "green",
      * "magenta" and "black".
      */

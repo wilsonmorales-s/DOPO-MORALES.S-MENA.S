@@ -1,10 +1,7 @@
 import java.awt.*;
 
 /**
- * A rectangle that can be manipulated and that draws itself on a canvas.
- * 
- * @author  Michael Kolling and David J. Barnes (Modified)
- * @version 1.0  (15 July 2000)()
+ * Clase que representa un rectangulo que se puede mover y modificar.
  */
 
 
@@ -21,7 +18,7 @@ public class Rectangle{
     private boolean isVisible;
 
     /**
-     * Create a new rectangle at default position with default color.
+     * Crea el rectangulo con sus valores iniciales.
      */
     public Rectangle(){
         height = 30;
@@ -34,7 +31,7 @@ public class Rectangle{
     
 
     /**
-     * Make this rectangle visible. If it was already visible, do nothing.
+     * Muestra el rectangulo en pantalla.
      */
     public void makeVisible(){
         isVisible = true;
@@ -42,7 +39,7 @@ public class Rectangle{
     }
     
     /**
-     * Make this rectangle invisible. If it was already invisible, do nothing.
+     * Oculta el rectangulo.
      */
     public void makeInvisible(){
         erase();
@@ -50,35 +47,35 @@ public class Rectangle{
     }
     
     /**
-     * Move the rectangle a few pixels to the right.
+     * Mueve el rectangulo hacia la derecha.
      */
     public void moveRight(){
         moveHorizontal(20);
     }
 
     /**
-     * Move the rectangle a few pixels to the left.
+     * Mueve el rectangulo hacia la izquierda.
      */
     public void moveLeft(){
         moveHorizontal(-20);
     }
 
     /**
-     * Move the rectangle a few pixels up.
+     * Mueve el rectangulo hacia arriba.
      */
     public void moveUp(){
         moveVertical(-20);
     }
 
     /**
-     * Move the rectangle a few pixels down.
+     * Mueve el rectangulo hacia abajo.
      */
     public void moveDown(){
         moveVertical(20);
     }
 
     /**
-     * Move the rectangle horizontally.
+     * Mueve el rectangulo horizontalmente.
      * @param distance the desired distance in pixels
      */
     public void moveHorizontal(int distance){
@@ -88,7 +85,7 @@ public class Rectangle{
     }
 
     /**
-     * Move the rectangle vertically.
+     * Mueve el rectangulo verticalmente.
      * @param distance the desired distance in pixels
      */
     public void moveVertical(int distance){
@@ -98,7 +95,7 @@ public class Rectangle{
     }
 
     /**
-     * Slowly move the rectangle horizontally.
+     * Mueve el rectangulo poco a poco horizontalmente.
      * @param distance the desired distance in pixels
      */
     public void slowMoveHorizontal(int distance){
@@ -118,7 +115,7 @@ public class Rectangle{
     }
 
     /**
-     * Slowly move the rectangle vertically.
+     * Mueve el rectangulo poco a poco verticalmente.
      * @param distance the desired distance in pixels
      */
     public void slowMoveVertical(int distance){
@@ -138,7 +135,7 @@ public class Rectangle{
     }
 
     /**
-     * Change the size to the new size
+     * Cambia el tamaño del triangulo.
      * @param newHeight the new height in pixels. newHeight must be >=0.
      * @param newWidht the new width in pixels. newWidth must be >=0.
      */
@@ -150,7 +147,7 @@ public class Rectangle{
     }
     
     /**
-     * Change the color. 
+     * Cambia el color.
      * @param color the new color. Valid colors are "red", "yellow", "blue", "green",
      * "magenta" and "black".
      */
@@ -160,7 +157,7 @@ public class Rectangle{
     }
 
     /*
-     * Draw the rectangle with current specifications on screen.
+     * Dibuja el rectangulo con sus valores actuales.
      */
 
     private void draw() {
@@ -174,7 +171,7 @@ public class Rectangle{
     }
 
     /*
-     * Erase the rectangle on screen.
+     * Quita el rectangulo de la pantalla.
      */
     private void erase(){
         if(isVisible) {

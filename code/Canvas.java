@@ -4,26 +4,16 @@ import java.util.List;
 import java.util.*;
 
 /**
- * Canvas is a class to allow for simple graphical drawing on a canvas.
- * This is a modification of the general purpose Canvas, specially made for
- * the BlueJ "shapes" example. 
- *
- * @author: Bruce Quig
- * @author: Michael Kolling (mik)
- *
- * @version: 1.6 (shapes)
+ * Esta clase se encarga de mostrar las figuras del proyecto en una ventana.
+ * Es una version adaptada del Canvas usado en los ejemplos de BlueJ.
  */
 public class Canvas{
-    // Note: The implementation of this class (specifically the handling of
-    // shape identity and colors) is slightly more complex than necessary. This
-    // is done on purpose to keep the interface and instance fields of the
-    // shape objects in this project clean and simple for educational purposes.
+    // Esta parte maneja las figuras y sus colores para poder dibujarlas
+    // sin tener que meter esta logica dentro de cada figura.
 
 	private static Canvas canvasSingleton;
 
-	/**
-	 * Factory method to get the canvas singleton object.
-	 */
+	/** Obtiene el Canvas que se usa para dibujar las figuras. */
 	public static Canvas getCanvas(){
 		if(canvasSingleton == null) {
 			canvasSingleton = new Canvas("BlueJ Shapes Demo", 300, 300, 
@@ -44,11 +34,7 @@ public class Canvas{
     private HashMap <Object,ShapeDescription> shapes;
     
     /**
-     * Create a Canvas.
-     * @param title  title to appear in Canvas Frame
-     * @param width  the desired width for the canvas
-     * @param height  the desired height for the canvas
-     * @param bgClour  the desired background colour of the canvas
+     * Crea la ventana donde se van a mostrar las figuras.
      */
     private Canvas(String title, int width, int height, Color bgColour){
         frame = new JFrame();
@@ -71,8 +57,7 @@ public class Canvas{
      */
     public void setVisible(boolean visible){
         if(graphic == null) {
-            // first time: instantiate the offscreen image and fill it with
-            // the background colour
+            // La primera vez se crea la imagen y se pinta el fondo.
             Dimension size = canvas.getSize();
             canvasImage = canvas.createImage(size.width, size.height);
             graphic = (Graphics2D)canvasImage.getGraphics();
@@ -84,49 +69,40 @@ public class Canvas{
     }
 
     /**
-     * Draw a given shape onto the canvas.
-     * @param  referenceObject  an object to define identity for this shape
-     * @param  color            the color of the shape
-     * @param  shape            the shape object to be drawn on the canvas
+     * Dibuja una figura en el Canvas.
+     * @param referenceObject objeto que identifica la figura
+     * @param color color de la figura
+     * @param shape figura que se va a dibujar
      */
-     // Note: this is a slightly backwards way of maintaining the shape
-     // objects. It is carefully designed to keep the visible shape interfaces
-     // in this project clean and simple for educational purposes.
+     // Si la figura ya estaba, se reemplaza para mantener una sola copia.
     public void draw(Object referenceObject, String color, Shape shape){
-    	objects.remove(referenceObject);   // just in case it was already there
-    	objects.add(referenceObject);      // add at the end
+    	objects.remove(referenceObject);   // Por si ya estaba guardada.
+    	objects.add(referenceObject);      // La agregamos al final.
     	shapes.put(referenceObject, new ShapeDescription(shape, color));
     	redraw();
     }
  
     /**
-     * Erase a given shape's from the screen.
-     * @param  referenceObject  the shape object to be erased 
+     * Quita una figura del Canvas.
+     * @param referenceObject figura que se quiere quitar
      */
     public void erase(Object referenceObject){
-    	objects.remove(referenceObject);   // just in case it was already there
+    	objects.remove(referenceObject);   // Por si ya estaba guardada.
     	shapes.remove(referenceObject);
     	redraw();
     }
 
     /**
-     * Set the foreground colour of the Canvas.
-     * EXTENSION (slotMachine project): colours are now resolved through
-     * {@link CssColors}, which understands the full set of standard CSS
-     * colour names instead of the original fixed list of seven colours.
-     * Unknown names fall back to black, exactly as the original did.
-     * @param  colorString   the new colour for the foreground of the Canvas,
-     *                       given as a standard CSS colour name
+     * Cambia el color que se usa para dibujar.
+     * @param colorString nombre del color que se quiere usar
      */
     public void setForegroundColor(String colorString){
         graphic.setColor(CssColors.toAwtColor(colorString));
     }
 
     /**
-     * Wait for a specified number of milliseconds before finishing.
-     * This provides an easy way to specify a small delay which can be
-     * used when producing animations.
-     * @param  milliseconds  the number 
+     * Hace una pequeña pausa, principalmente para las animaciones.
+     * @param milliseconds tiempo de espera
      */
     public void wait(int milliseconds){
         try{
@@ -136,9 +112,7 @@ public class Canvas{
         }
     }
 
-	/**
-	 * Redraw ell shapes currently on the Canvas.
-	 */
+	/** Vuelve a dibujar las figuras que estan en el Canvas. */
 	private void redraw(){
 		erase();
 		for(Iterator i=objects.iterator(); i.hasNext(); ) {
@@ -147,9 +121,7 @@ public class Canvas{
         canvas.repaint();
     }
        
-    /**
-     * Erase the whole canvas. (Does not repaint.)
-     */
+    /** Limpia todo el Canvas, pero no lo vuelve a pintar. */
     private void erase(){
         Color original = graphic.getColor();
         graphic.setColor(backgroundColour);
@@ -160,10 +132,8 @@ public class Canvas{
 
 
     /************************************************************************
-     * Inner class CanvasPane - the actual canvas component contained in the
-     * Canvas frame. This is essentially a JPanel with added capability to
-     * refresh the image drawn on it.
-     */
+     * Clase interna que funciona como la parte donde se dibuja la imagen.
+     ************************************************************************/
     private class CanvasPane extends JPanel{
         public void paint(Graphics g){
             g.drawImage(canvasImage, 0, 0, null);
@@ -171,10 +141,8 @@ public class Canvas{
     }
     
     /************************************************************************
-     * Inner class CanvasPane - the actual canvas component contained in the
-     * Canvas frame. This is essentially a JPanel with added capability to
-     * refresh the image drawn on it.
-     */
+     * Clase interna que funciona como la parte donde se dibuja la imagen.
+     ************************************************************************/
     private class ShapeDescription{
     	private Shape shape;
     	private String colorString;

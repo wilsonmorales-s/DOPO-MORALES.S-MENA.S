@@ -10,18 +10,18 @@ public class CssColors{
     private CssColors(){
     }
 
-    /** Revisa si el nombre del color existe. */
+    /** Revisa si el color esta dentro de los colores permitidos. */
     public static boolean isValid(String name){
         return name != null && TABLE.containsKey(name.toLowerCase());
     }
 
-    /** Convierte el nombre a un Color de Java. */
+    /** Convierte el nombre del color al formato Color de Java. */
     public static Color toAwtColor(String name){
         Color color = (name == null) ? null : TABLE.get(name.toLowerCase());
         return (color != null) ? color : Color.black;
     }
 
-    // Lista de colores CSS que se pueden usar en el proyecto.
+    // Tabla con los colores que podemos usar en el proyecto.
     private static Map<String, Color> buildTable(){
         Map<String, Color> t = new HashMap<String, Color>();
         t.put("black", new Color(0, 0, 0));

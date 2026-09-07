@@ -6,19 +6,9 @@ import java.util.Set;
 import javax.swing.JOptionPane;
 
 /**
- * Simulador de una maquina tragamonedas.
- * <p>
- * La maquina mantiene dos colecciones independientes:
- * <ul>
- *   <li>{@code wheels}: las ruedas que tiene la maquina, en orden
- *       de izquierda a derecha.</li>
- *   <li>{@code palette}: los simbolos (colores CSS) disponibles para
- *       usar en cualquier rueda, numerados 1..N de izquierda a
- *       derecha segun el estandar del taller.</li>
- * </ul>
- * Cada rueda solo guarda un indice hacia la paleta, nunca el color
- * directamente, para que agregar o quitar simbolos pueda reflejarse
- * en todas las ruedas que los usan.
+ * Esta clase maneja la maquina tragamonedas y sus ruedas.
+ * La paleta guarda los colores disponibles y cada rueda guarda la
+ * posicion del color que esta usando.
  *
  * @author Samuel Mena Serrato
  */
@@ -51,9 +41,8 @@ public class SlotMachine{
     }
 
     /**
-     * Agrega una rueda nueva y vacia en la posicion indicada. Si la
-     * paleta ya tiene simbolos, la rueda nueva toma el primero por
-     * defecto.
+     * Agrega una rueda en la posicion indicada. Si ya hay colores,
+     * empieza usando el primero.
      *
      * @param pos posicion 1-based donde insertar la rueda; se ajusta
      *            al rango valido si viene fuera de limites
@@ -73,7 +62,7 @@ public class SlotMachine{
     }
 
     /**
-     * Elimina la rueda en la posicion indicada.
+     * Elimina la rueda que esta en la posicion indicada.
      *
      * @param pos posicion 1-based de la rueda a eliminar
      */
@@ -90,7 +79,7 @@ public class SlotMachine{
     }
 
     /**
-     * Agrega un color a la paleta de simbolos disponibles.
+     * Agrega un color a la lista de simbolos disponibles.
      *
      * @param pos   posicion 1-based donde insertar el simbolo
      * @param color nombre del color en el estandar CSS
@@ -109,9 +98,8 @@ public class SlotMachine{
     }
 
     /**
-     * Quita un simbolo de la paleta. Las ruedas que lo tenian quedan
-     * apuntando al primer simbolo disponible (o vacias si ya no queda
-     * ninguno).
+     * Quita un simbolo de la paleta. Si alguna rueda lo tenia, se
+     * acomoda al primer simbolo disponible.
      *
      * @param symbol color a eliminar de la paleta
      */
@@ -128,7 +116,7 @@ public class SlotMachine{
     }
 
     /**
-     * Pone un simbolo especifico en una rueda especifica.
+     * Pone un simbolo especifico en una rueda.
      *
      * @param wheel  posicion 1-based de la rueda
      * @param symbol simbolo (debe existir ya en la paleta)
@@ -150,8 +138,7 @@ public class SlotMachine{
     }
 
     /**
-     * Gira una rueda a un simbolo aleatorio de la paleta. Falla si la
-     * rueda esta fija (locked).
+     * Gira una rueda usando un simbolo aleatorio. No funciona si esta bloqueada.
      *
      * @param wheel posicion 1-based de la rueda a girar
      */
@@ -176,8 +163,7 @@ public class SlotMachine{
     }
 
     /**
-     * Gira todas las ruedas que no esten fijas (locked) a un simbolo
-     * aleatorio cada una. Las ruedas locked se dejan tal como estan.
+     * Gira todas las ruedas que no estan bloqueadas. Las bloqueadas se quedan igual.
      */
     public void spin(){
         if(wheels.isEmpty()){
@@ -198,10 +184,8 @@ public class SlotMachine{
     }
 
     /**
-     * Rota una rueda un numero exacto de pasos hacia el siguiente
-     * simbolo de la paleta (con vuelta circular). Si la maquina esta
-     * visible, el movimiento se muestra paso a paso. Falla si la
-     * rueda esta fija (locked).
+     * Gira una rueda la cantidad exacta de pasos indicada. La paleta se
+     * recorre de forma circular y una rueda bloqueada no se mueve.
      *
      * @param wheel posicion 1-based de la rueda a rotar
      * @param steps numero de pasos a avanzar (debe ser mayor o igual a 0)
@@ -237,11 +221,8 @@ public class SlotMachine{
     }
 
     /**
-     * Deja la maquina completa en la configuracion dada: un simbolo
-     * por cada rueda, en orden. Las ruedas fijas (locked) no cambian.
-     * Falla si el tamaño no coincide con el numero de ruedas o si
-     * algun simbolo no existe en la paleta (en ese caso no se aplica
-     * ningun cambio).
+     * Deja las ruedas con la configuracion que se recibe. Las ruedas
+     * bloqueadas no cambian y si hay un simbolo que no existe, falla.
      *
      * @param setSymbols un simbolo por cada rueda, en el mismo orden
      */
@@ -269,8 +250,7 @@ public class SlotMachine{
     }
 
     /**
-     * Intercambia el simbolo de dos ruedas. Falla si alguna de las
-     * dos esta fija (locked).
+     * Intercambia los simbolos de dos ruedas. No se puede si alguna esta bloqueada.
      *
      * @param wheel1 posicion 1-based de la primera rueda
      * @param wheel2 posicion 1-based de la segunda rueda
@@ -299,8 +279,7 @@ public class SlotMachine{
     }
 
     /**
-     * Fija una rueda para que la maquina no vuelva a girarla hasta
-     * que se libere con {@link #unlock(int)}.
+     * Bloquea una rueda para que no pueda girar hasta desbloquearla.
      *
      * @param wheel posicion 1-based de la rueda a fijar
      */
@@ -315,7 +294,7 @@ public class SlotMachine{
     }
 
     /**
-     * Libera una rueda previamente fijada con {@link #lock(int)}.
+     * Desbloquea una rueda que estaba bloqueada.
      *
      * @param wheel posicion 1-based de la rueda a liberar
      */
@@ -330,8 +309,7 @@ public class SlotMachine{
     }
 
     /**
-     * Consulta los simbolos disponibles en la maquina, en el orden
-     * de la paleta.
+     * Devuelve los simbolos que hay en la paleta, en el mismo orden.
      *
      * @return arreglo con los simbolos de la paleta
      */
@@ -341,7 +319,7 @@ public class SlotMachine{
     }
 
     /**
-     * Cuenta cuantos simbolos distintos hay en la paleta.
+     * Cuenta cuantos simbolos diferentes hay en la paleta.
      *
      * @return numero de simbolos diferentes
      */
@@ -352,7 +330,7 @@ public class SlotMachine{
     }
 
     /**
-     * Consulta que simbolo tiene cada rueda en este momento.
+     * Devuelve el simbolo que tiene cada rueda.
      *
      * @return arreglo con un simbolo por rueda (o {@code null} en la
      *         posicion de una rueda vacia), en el mismo orden que las ruedas
@@ -368,7 +346,7 @@ public class SlotMachine{
     }
 
     /**
-     * Revisa si todas las ruedas tienen actualmente el mismo simbolo.
+     * Revisa si todas las ruedas tienen el mismo simbolo.
      *
      * @return {@code true} si hay jackpot, {@code false} en caso contrario
      */
@@ -377,7 +355,7 @@ public class SlotMachine{
         return computeJackpot();
     }
 
-    /** Muestra la maquina y todas sus ruedas en el canvas. */
+    /** Muestra la maquina y sus ruedas en el Canvas. */
     public void makeVisible(){
         visible = true;
         background.makeVisible();
@@ -390,7 +368,7 @@ public class SlotMachine{
         succeed();
     }
 
-    /** Oculta la maquina y todas sus ruedas del canvas. */
+    /** Oculta la maquina y sus ruedas del Canvas. */
     public void makeInvisible(){
         background.makeInvisible();
         for(Wheel wheel : wheels){
@@ -400,15 +378,14 @@ public class SlotMachine{
         succeed();
     }
 
-    /** Termina el simulador, ocultando la maquina. */
+    /** Cierra la maquina ocultandola. */
     public void exit(){
         makeInvisible();
         succeed();
     }
 
     /**
-     * Indica si la ultima operacion invocada sobre la maquina fue
-     * exitosa.
+     * Indica si la ultima operacion se hizo correctamente.
      *
      * @return {@code true} si la ultima operacion tuvo exito
      */
@@ -417,9 +394,10 @@ public class SlotMachine{
     }
 
     // ---------------------------------------------------------------
-    // Metodos privados de apoyo
+    // Metodos privados que ayudan a la clase
     // ---------------------------------------------------------------
 
+    // Mantiene una posicion dentro del rango permitido.
     private int clamp(int pos, int min, int max){
         if(pos < min){
             return min;
@@ -430,6 +408,7 @@ public class SlotMachine{
         return pos;
     }
 
+    // Reacomoda las ruedas para que queden separadas correctamente.
     private void layoutWheels(){
         for(int i = 0; i < wheels.size(); i++){
             wheels.get(i).relayout(LAYOUT_X + i * WHEEL_SPACING, LAYOUT_Y);
@@ -438,6 +417,7 @@ public class SlotMachine{
         background.changeSize(120, width);
     }
 
+    // Pone el primer simbolo en las ruedas que aun estan vacias.
     private void assignDefaultSymbolToEmptyWheels(){
         for(Wheel wheel : wheels){
             if(wheel.getPosition() == 0){
@@ -446,10 +426,8 @@ public class SlotMachine{
         }
     }
 
-    // Cuando se inserta un simbolo en medio de la paleta, todo indice
-    // de paleta que estuviera en o despues del punto de insercion se
-    // corre un puesto. Esto mantiene sincronizado lo que muestra cada
-    // rueda con lo que logicamente le corresponde.
+    // // Si metemos un simbolo en la mitad, ajustamos las posiciones de las
+    // ruedas para que sigan mostrando el mismo color.
     private void fixWheelPositionsAfterInsertion(int insertedIndex){
         for(Wheel wheel : wheels){
             int pos = wheel.getPosition();
@@ -463,6 +441,7 @@ public class SlotMachine{
         }
     }
 
+    // Ajusta las posiciones de las ruedas cuando se quita un simbolo.
     private void fixWheelPositionsAfterRemoval(int removedIndex){
         for(Wheel wheel : wheels){
             int pos = wheel.getPosition();
@@ -479,13 +458,13 @@ public class SlotMachine{
         }
     }
 
+    // Hace un giro aleatorio en una sola rueda.
     private void spinOneWheelRandom(Wheel wheel){
         int newPosition = random.nextInt(palette.size()) + 1;
         wheel.setPosition(newPosition, palette.get(newPosition - 1));
     }
 
-    // Avanza la rueda exactamente un simbolo en la paleta, con vuelta
-    // circular. Una rueda vacia (position == 0) arranca en el primero.
+    // // Avanza la rueda un simbolo y vuelve al inicio cuando llega al final.
     private void advanceOneStep(Wheel wheel){
         int current = wheel.getPosition();
         int currentIndex = (current == 0) ? -1 : current - 1;
@@ -493,6 +472,7 @@ public class SlotMachine{
         wheel.setPosition(nextIndex + 1, palette.get(nextIndex));
     }
 
+    // Pausa un momento para que se pueda ver el giro.
     private void pause(){
         try{
             Thread.sleep(STEP_DELAY_MS);
@@ -501,6 +481,7 @@ public class SlotMachine{
         }
     }
 
+    // Comprueba internamente si todas las ruedas tienen el mismo simbolo.
     private boolean computeJackpot(){
         if(wheels.isEmpty()){
             return false;
@@ -521,6 +502,7 @@ public class SlotMachine{
         return true;
     }
 
+    // Actualiza el fondo dependiendo de si hay jackpot.
     private void refreshJackpotLook(){
         if(!visible){
             return;
@@ -528,10 +510,12 @@ public class SlotMachine{
         background.changeColor(computeJackpot() ? "gold" : "white");
     }
 
+    // Marca la ultima operacion como correcta.
     private void succeed(){
         lastOk = true;
     }
 
+    // Marca la operacion como fallida y muestra el mensaje si la maquina esta visible.
     private void fail(String message){
         lastOk = false;
         if(visible){
