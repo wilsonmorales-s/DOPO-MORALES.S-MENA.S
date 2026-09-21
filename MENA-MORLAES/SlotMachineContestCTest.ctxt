@@ -1,0 +1,9 @@
+#BlueJ class context
+#Sun Sep 20 23:15:44 COT 2026
+comment0.target=SlotMachineContestCTest
+comment0.text=\r\n Pruebas compartidas del ciclo 3 para SlotMachineContest.\r\n
+comment1.target=void shouldSolveThreeWheels()
+comment1.text=\r\n Comprueba que solve resuelva una maquina de 3 ruedas.\r\n
+comment2.target=void shouldRespectActionLimit()
+comment2.text=\r\n Comprueba que solve respete el limite de acciones\r\n para una maquina de 20 ruedas.\r\n
+numComments=3

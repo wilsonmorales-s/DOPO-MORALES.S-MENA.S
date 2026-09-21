@@ -1,0 +1,19 @@
+#BlueJ class context
+#Sun Sep 20 23:13:38 COT 2026
+comment0.target=SlotMachineContestTest
+comment0.text=\r\n Pruebas de unidad del ciclo 3 para SlotMachineContest.\r\n
+comment1.target=void shouldCreateMachineWithCorrectSize()
+comment1.text=\r\n Comprueba que una maquina creada con solve tenga\r\n la cantidad correcta de ruedas.\r\n
+comment2.target=void shouldUseExistingWheels()
+comment2.text=\r\n Comprueba que las acciones de solve siempre indiquen\r\n una rueda existente.\r\n
+comment3.target=void shouldUseValidNumberOfSteps()
+comment3.text=\r\n Comprueba que solve no genere pasos mayores\r\n que los necesarios para una vuelta completa.\r\n
+comment4.target=void shouldCreateCompleteActions()
+comment4.text=\r\n Comprueba que cada accion tenga rueda y pasos.\r\n
+comment5.target=void shouldSolveExistingMachine()
+comment5.text=\r\n Comprueba que solve pueda trabajar directamente\r\n con una maquina ya creada.\r\n
+comment6.target=void shouldReturnEmptyForInvalidSize()
+comment6.text=\r\n Comprueba que solve no produzca acciones para\r\n un tama\u00F1o que no pertenece al problema.\r\n
+comment7.target=void shouldStayInsideActionLimit()
+comment7.text=\r\n Comprueba que el numero de acciones permanezca\r\n dentro del limite establecido por la maraton.\r\n
+numComments=8
