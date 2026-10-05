@@ -1,0 +1,12 @@
+#BlueJ class context
+#Sun Oct 04 23:09:20 COT 2026
+comment0.target=SlotMachineCC4Test
+comment0.text=\r\n\r\n @author Samuel Mena Serrato\r\n @author Wilson Morales SancheZ\r\n
+comment1.target=void setUp()
+comment2.target=void accordingMesShouldNotLetARebelWheelBeDeletedLockedOrSwapped()
+comment2.text=\r\n Caso 1, aportado por Mes\: una rueda rebelde no se deja eliminar,\r\n ni bloquear, ni intercambiar.\r\n
+comment3.target=void accordingMosShouldCopyTheLeftWheelWhenALeftyWheelSpins()
+comment3.text=\r\n Caso 2, aportado por Mos\: una rueda lefty que gira copia el simbolo\r\n de la rueda que tiene a su izquierda.\r\n
+comment4.target=void accordingMesMosShouldKeepAnEphemeralSymbolAfterItBecomesAPoint()
+comment4.text=\r\n Caso 3\: un simbolo efimero se encoge hasta quedar como un punto,\r\n pero sigue siendo un simbolo valido de la maquina.\r\n
+numComments=5

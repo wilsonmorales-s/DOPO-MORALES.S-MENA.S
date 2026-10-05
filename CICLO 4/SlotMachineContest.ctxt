@@ -1,0 +1,17 @@
+#BlueJ class context
+#Sun Oct 04 22:19:18 COT 2026
+comment0.target=SlotMachineContest
+comment0.text=\r\n Resuelve el problema I (Slot Machine) de la maraton ICPC 2025.\r\n\r\n La solucion trabaja descubriendo la posicion de cada rueda\r\n y despues utiliza esa informacion para formar el jackpot.\r\n
+comment1.params=n
+comment1.target=int[][] solve(int)
+comment1.text=\r\n Crea una maquina de n ruedas y n simbolos y calcula\r\n las acciones necesarias para conseguir el jackpot.\r\n\r\n @param n numero de ruedas y simbolos\r\n @return acciones {rueda, pasos}\r\n
+comment2.params=machine n
+comment2.target=int[][] solve(SlotMachine, int)
+comment2.text=\r\n Resuelve una maquina sin consultar directamente\r\n la configuracion de sus ruedas.\r\n\r\n @param machine maquina que se va a resolver\r\n @param n numero de ruedas\r\n @return acciones {rueda, pasos}\r\n
+comment3.params=n
+comment3.target=void simulate(int)
+comment3.text=\r\n Simula la solucion mostrando la maquina.\r\n\r\n @param n numero de ruedas y simbolos\r\n
+comment4.params=machine n actions
+comment4.target=void restore(SlotMachine, int, int[][])
+comment4.text=\r\n Devuelve la maquina a la configuracion inicial.\r\n
+numComments=5

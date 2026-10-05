@@ -1,0 +1,23 @@
+#BlueJ class context
+#Sun Oct 04 22:19:18 COT 2026
+comment0.target=Symbol
+comment0.text=\r\n Simbolo de una rueda. Cada simbolo tiene un color y sabe dibujarse\r\n dentro de la rueda. Cada tipo de simbolo es una subclase.<br>\r\n <b>(color, size)</b><br>\r\n <b>Inv\:</b> color es un color CSS valido y size &gt; 0\r\n\r\n @author Samuel Mena Serrato\r\n @author Wilson Morales Sanchez\r\n
+comment1.params=color
+comment1.target=Symbol(java.lang.String)
+comment1.text=\r\n Crea un simbolo con su tamano completo.\r\n\r\n @param color color del simbolo\r\n
+comment2.target=java.lang.String getColor()
+comment2.text=\r\n Consulta el color del simbolo.\r\n\r\n @return color del simbolo\r\n
+comment3.target=int getSize()
+comment3.text=\r\n Consulta el tamano actual del simbolo.\r\n\r\n @return tamano en pixeles\r\n
+comment4.target=java.lang.String getType()
+comment4.text=\r\n Consulta el tipo del simbolo.\r\n\r\n @return nombre del tipo\r\n
+comment5.params=x y
+comment5.target=void draw(int, int)
+comment5.text=\r\n Dibuja el simbolo en el centro de una rueda.\r\n\r\n @param x esquina izquierda de la rueda\r\n @param y esquina superior de la rueda\r\n
+comment6.target=void erase()
+comment6.text=Borra el simbolo de la pantalla.
+comment7.target=void onSpin()
+comment7.text=Se llama cada vez que la rueda gira. Por defecto no hace nada.
+comment8.target=void onSelect()
+comment8.text=Se llama cuando la rueda queda en este simbolo. Por defecto no hace nada.
+numComments=9
