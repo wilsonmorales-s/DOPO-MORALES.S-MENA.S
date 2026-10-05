@@ -1,0 +1,14 @@
+#BlueJ class context
+#Sun Oct 04 22:19:18 COT 2026
+comment0.target=EphemeralSymbol
+comment0.text=\r\n Simbolo efimero. Cada vez que su rueda gira se hace mas pequeno,\r\n hasta quedar como un punto. Se dibuja como un cuadrado.<br>\r\n <b>Inv\:</b> MIN_SIZE &lt;\= size &lt;\= FULL_SIZE\r\n\r\n @author Samuel Mena Serrato\r\n @author Wilson Morales Sanchez\r\n
+comment1.params=color
+comment1.target=EphemeralSymbol(java.lang.String)
+comment1.text=\r\n Crea un simbolo efimero con su tamano completo.\r\n\r\n @param color color del simbolo\r\n
+comment2.target=java.lang.String getType()
+comment3.params=x y
+comment3.target=void draw(int, int)
+comment4.target=void erase()
+comment5.target=void onSpin()
+comment5.text=Se hace mas pequeno, sin bajar del tamano minimo.
+numComments=6

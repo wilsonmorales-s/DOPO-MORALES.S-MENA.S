@@ -1,0 +1,17 @@
+#BlueJ class context
+#Sun Oct 04 22:19:18 COT 2026
+comment0.target=ShySymbol
+comment0.text=\r\n Simbolo timido. Cada vez que su rueda queda en el, cambia de visible\r\n a escondido o al reves. Se dibuja como un triangulo.<br>\r\n <b>(hidden)</b>\r\n\r\n @author Samuel Mena Serrato\r\n @author Wilson Morales Sanchez\r\n
+comment1.params=color
+comment1.target=ShySymbol(java.lang.String)
+comment1.text=\r\n Crea un simbolo timido, visible al inicio.\r\n\r\n @param color color del simbolo\r\n
+comment2.target=java.lang.String getType()
+comment3.target=boolean isHidden()
+comment3.text=\r\n Indica si el simbolo esta escondido.\r\n\r\n @return true si esta escondido\r\n
+comment4.params=x y
+comment4.target=void draw(int, int)
+comment4.text=Dibuja un triangulo, solo si el simbolo no esta escondido.
+comment5.target=void erase()
+comment6.target=void onSelect()
+comment6.text=Cambia entre visible y escondido.
+numComments=7

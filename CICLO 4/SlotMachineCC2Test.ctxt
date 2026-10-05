@@ -1,0 +1,12 @@
+#BlueJ class context
+#Sun Oct 04 22:19:18 COT 2026
+comment0.target=SlotMachineCC2Test
+comment0.text=\r\n\r\n Mes \= Mena Serrato, Mos \= Morales Sanchez.\r\n\r\n @author Samuel Mena Serrato (Mes)\r\n @author Wilson Morales Sanchez (Mos)\r\n
+comment1.target=void setUp()
+comment2.target=void accordingMesShouldLeaveANewWheelEmptyWhenThePaletteIsEmpty()
+comment2.text=\r\n Caso 1, aportado por Mes\: al agregar una rueda con la paleta\r\n vacia, la rueda debe quedar vacia (sin simbolo), no fallar.\r\n
+comment3.target=void accordingMosShouldReturnToTheSameSymbolAfterAFullRotation()
+comment3.text=\r\n Caso 2\: si damos una vuelta completa, la rueda vuelve al color inicial.\r\n
+comment4.target=void accordingMesMosShouldNeverReportJackpotWithoutWheels()
+comment4.text=\r\n Caso 3\: una maquina sin ruedas no puede tener jackpot.\r\n
+numComments=5

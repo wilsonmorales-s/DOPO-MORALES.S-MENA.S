@@ -1,0 +1,7 @@
+#BlueJ class context
+#Sun Oct 04 22:19:18 COT 2026
+comment0.target=NormalWheel
+comment0.text=\r\n Rueda normal. Gira, se bloquea, se intercambia y se elimina sin\r\n restricciones. Su marco es gris.\r\n\r\n @author Samuel Mena Serrato\r\n @author Wilson Morales Sanchez\r\n
+comment1.target=java.lang.String getType()
+comment2.target=java.lang.String getFrameColor()
+numComments=3

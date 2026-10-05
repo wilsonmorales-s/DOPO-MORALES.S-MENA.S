@@ -1,0 +1,12 @@
+#BlueJ class context
+#Sun Oct 04 22:19:18 COT 2026
+comment0.target=LazyWheel
+comment0.text=\r\n Rueda perezosa (tipo nuevo propuesto por el equipo). Solo gira una de\r\n cada dos veces\: la primera descansa, la segunda gira, y asi.\r\n Su marco es dorado.<br>\r\n <b>(resting)</b>\r\n\r\n @author Samuel Mena Serrato\r\n @author Wilson Morales Sanchez\r\n
+comment1.target=LazyWheel()
+comment1.text=Crea una rueda perezosa, que descansa en su primer giro.
+comment2.target=java.lang.String getType()
+comment3.target=java.lang.String getFrameColor()
+comment4.params=steps
+comment4.target=void spin(int)
+comment4.text=\r\n Una vez descansa y la siguiente gira normal.\r\n\r\n @param steps cuantos simbolos avanza cuando le toca girar\r\n
+numComments=5

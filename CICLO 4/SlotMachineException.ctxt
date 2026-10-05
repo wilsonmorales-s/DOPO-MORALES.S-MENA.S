@@ -1,0 +1,8 @@
+#BlueJ class context
+#Sun Oct 04 22:19:18 COT 2026
+comment0.target=SlotMachineException
+comment0.text=\r\n Excepcion de la maquina tragamonedas. Se lanza cuando se pide algo\r\n que la maquina no puede hacer. Los mensajes estan encapsulados como\r\n constantes de la clase.\r\n\r\n @author Samuel Mena Serrato\r\n @author Wilson Morales Sanchez\r\n
+comment1.params=message
+comment1.target=SlotMachineException(java.lang.String)
+comment1.text=\r\n Crea la excepcion con su mensaje.\r\n\r\n @param message explicacion de lo que paso\r\n
+numComments=2

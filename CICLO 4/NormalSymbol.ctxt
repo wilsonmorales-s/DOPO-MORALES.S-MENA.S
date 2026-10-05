@@ -1,0 +1,12 @@
+#BlueJ class context
+#Sun Oct 04 22:19:18 COT 2026
+comment0.target=NormalSymbol
+comment0.text=\r\n Simbolo normal. Se dibuja como un circulo y no cambia nunca.\r\n\r\n @author Samuel Mena Serrato\r\n @author Wilson Morales Sanchez\r\n
+comment1.params=color
+comment1.target=NormalSymbol(java.lang.String)
+comment1.text=\r\n Crea un simbolo normal.\r\n\r\n @param color color del simbolo\r\n
+comment2.target=java.lang.String getType()
+comment3.params=x y
+comment3.target=void draw(int, int)
+comment4.target=void erase()
+numComments=5
