@@ -1,0 +1,13 @@
+#BlueJ class context
+#Sun Oct 04 22:19:18 COT 2026
+comment0.target=RebelWheel
+comment0.text=\r\n Rueda rebelde. No se deja bloquear, ni intercambiar, ni eliminar.\r\n Gira como una rueda normal. Su marco es rojo.\r\n\r\n @author Samuel Mena Serrato\r\n @author Wilson Morales Sanchez\r\n
+comment1.target=java.lang.String getType()
+comment2.target=java.lang.String getFrameColor()
+comment3.target=void lock()
+comment3.text=\r\n La rueda rebelde no se deja bloquear.\r\n\r\n @throws SlotMachineException siempre\r\n
+comment4.target=void checkSwappable()
+comment4.text=\r\n La rueda rebelde no se deja intercambiar.\r\n\r\n @throws SlotMachineException siempre\r\n
+comment5.target=void checkDeletable()
+comment5.text=\r\n La rueda rebelde no se deja eliminar.\r\n\r\n @throws SlotMachineException siempre\r\n
+numComments=6

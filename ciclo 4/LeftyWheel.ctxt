@@ -1,0 +1,10 @@
+#BlueJ class context
+#Sun Oct 04 22:19:18 COT 2026
+comment0.target=LeftyWheel
+comment0.text=\r\n Rueda lefty. Si tiene una rueda a su izquierda, al girar queda en el\r\n mismo simbolo que ella. Si no tiene, gira como una rueda normal.\r\n Su marco es azul.\r\n\r\n @author Samuel Mena Serrato\r\n @author Wilson Morales Sanchez\r\n
+comment1.target=java.lang.String getType()
+comment2.target=java.lang.String getFrameColor()
+comment3.params=steps
+comment3.target=void move(int)
+comment3.text=\r\n Copia la posicion de la rueda de la izquierda. Si no tiene vecina,\r\n avanza como una rueda normal.\r\n\r\n @param steps cuantos simbolos avanza si no tiene vecina\r\n
+numComments=4
