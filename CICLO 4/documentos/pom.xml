@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>edu.eci.dopo</groupId>
+  <artifactId>slotmachine</artifactId>
+  <version>5.0</version>
+  <name>SlotMachine - Proyecto inicial DOPO 2026-2 (Mena - Morales)</name>
+
+  <properties>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>5.10.2</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <!-- Pruebas de unidad -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.2.5</version>
+      </plugin>
+
+      <!-- Analisis dinamico: cubrimiento con JaCoCo (target/site/jacoco/index.html) -->
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>0.8.12</version>
+        <executions>
+          <execution>
+            <id>prepare-agent</id>
+            <goals><goal>prepare-agent</goal></goals>
+          </execution>
+          <execution>
+            <id>report</id>
+            <phase>test</phase>
+            <goals><goal>report</goal></goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- Analisis estatico: reglas de calidad con PMD (target/pmd.xml y target/site/pmd.html) -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <version>3.21.2</version>
+        <configuration>
+          <linkXRef>false</linkXRef>
+          <targetJdk>17</targetJdk>
+          <rulesets>
+            <ruleset>category/java/bestpractices.xml</ruleset>
+            <ruleset>category/java/codestyle.xml</ruleset>
+            <ruleset>category/java/design.xml</ruleset>
+            <ruleset>category/java/documentation.xml</ruleset>
+            <ruleset>category/java/errorprone.xml</ruleset>
+            <ruleset>category/java/multithreading.xml</ruleset>
+            <ruleset>category/java/performance.xml</ruleset>
+            <ruleset>category/java/security.xml</ruleset>
+          </rulesets>
+          <!-- prioridad 1 = alta (rojo): pmd:check falla si queda alguna -->
+          <failurePriority>1</failurePriority>
+          <printFailingErrors>true</printFailingErrors>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <version>3.21.2</version>
+      </plugin>
+    </plugins>
+  </reporting>
+</project>
